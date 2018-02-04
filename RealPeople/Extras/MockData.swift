@@ -27,4 +27,6 @@ let galleryItems = [GalleryItem(image: #imageLiteral(resourceName: "beauty"), de
               GalleryItem(image: #imageLiteral(resourceName: "woman-6"), department: "women", description: "woman-6", submittedBy: "splebbo", date: "3 Feb 2018"),
               GalleryItem(image: #imageLiteral(resourceName: "woman-7"), department: "women", description: "woman-7", submittedBy: "splebbo", date: "3 Feb 2018")]
 
-let products = [Product(image: #imageLiteral(resourceName: "dressing-gown"), title: "Dressing gown", price: "£19.99"), Product(image: #imageLiteral(resourceName: "bra"), title: "Bra", price: "£9.99"), Product(image: #imageLiteral(resourceName: "vase"), title: "Tulips", price: "£5.99")]
+let products = [Product(image: #imageLiteral(resourceName: "dressing-gown"), title: "Dressing gown", price: "£19.99"),
+                Product(image: #imageLiteral(resourceName: "bra"), title: "Bra", price: "£9.99"),
+                Product(image: #imageLiteral(resourceName: "vase"), title: "Tulips", price: "£5.99")]
