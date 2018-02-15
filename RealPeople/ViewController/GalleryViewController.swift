@@ -37,6 +37,7 @@ class GalleryViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     setupDepartmentButtons()
+    setupOverlay()
     borderView.backgroundColor = .buttonSelectedGrey
     collectionViewItems = galleryItems
   }
@@ -58,6 +59,21 @@ class GalleryViewController: UIViewController {
       button.layer.masksToBounds = true
       button.layer.cornerRadius = 8
     }
+  }
+
+  func setupOverlay() {
+    let overlayView = OverlayView()
+    overlayView.buttonImage = #imageLiteral(resourceName: "camera-white")
+    
+    overlayView.addItem("Upload your own", icon: #imageLiteral(resourceName: "camera-black"), handler: { item in
+      
+    })
+
+    overlayView.addItem("Terms and conditions", icon: nil, handler: { item in
+
+    })
+
+    view.addSubview(overlayView)
   }
 
   func reloadCollectionView() {
@@ -110,7 +126,7 @@ extension GalleryViewController: UICollectionViewDelegate, UICollectionViewDataS
   }
 
   func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-    let imageModel = galleryItems[indexPath.row]
+    let imageModel = collectionViewItems[indexPath.row]
     performSegue(withIdentifier: "showItem", sender: imageModel)
   }
 }
