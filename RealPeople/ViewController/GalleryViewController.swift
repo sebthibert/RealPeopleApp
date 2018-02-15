@@ -4,7 +4,6 @@ class GalleryViewController: UIViewController {
   @IBOutlet weak var galleryCollectionView: UICollectionView!
   @IBOutlet var departmentButtonCollection: [UIButton]!
   @IBOutlet weak var borderView: UIView!
-  @IBOutlet weak var uploadToggleView: UIView!
   
   @IBAction func departmentButtonPressed(_ sender: UIButton) {
     setupDepartmentButtons()
@@ -38,8 +37,6 @@ class GalleryViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     setupDepartmentButtons()
-    uploadToggleView.addBorder(width: 0, cornerRadius: uploadToggleView.frame.width/2)
-    uploadToggleView.backgroundColor = .buttonSelectedGrey
     borderView.backgroundColor = .buttonSelectedGrey
     collectionViewItems = galleryItems
   }
