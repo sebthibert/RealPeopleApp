@@ -9,7 +9,7 @@ class OverlayItem: UIView {
   var handler: ((OverlayItem) -> Void)? = nil
   var title: String? = nil
   var icon: UIImage? = nil
-  var overlayView: Floaty? = nil
+  var overlayView: OverlayView? = nil
 
   init() {
     super.init(frame: CGRect(x: 0, y: 0, width: size, height: size))
