@@ -112,7 +112,7 @@ class OverlayView: UIView {
 
   private func setOverlayView() {
     setOverlayFrame()
-    overlayView.backgroundColor = UIColor.black.withAlphaComponent(0.6)
+    overlayView.backgroundColor = UIColor.black.withAlphaComponent(0.7)
     overlayView.alpha = 0
     overlayView.isUserInteractionEnabled = true
 
@@ -158,7 +158,7 @@ class OverlayView: UIView {
   private func popAnimationWithClose() {
     var delay = 0.0
     for item in items.reversed() {
-      UIView.animate(withDuration: 0.15, delay: delay, options: [], animations: { () -> Void in
+      UIView.animate(withDuration: 0.15, delay: delay, options: [], animations: {
         item.layer.transform = CATransform3DMakeScale(0.4, 0.4, 1)
         item.alpha = 0
       })

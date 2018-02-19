@@ -29,4 +29,13 @@ let galleryItems = [GalleryItem(image: #imageLiteral(resourceName: "beauty"), de
 
 let products = [Product(image: #imageLiteral(resourceName: "dressing-gown"), title: "Dressing gown", price: "£19.99"),
                 Product(image: #imageLiteral(resourceName: "bra"), title: "Bra", price: "£9.99"),
+                Product(image: #imageLiteral(resourceName: "vase"), title: "Tulips", price: "£5.99"),
+                Product(image: #imageLiteral(resourceName: "dressing-gown"), title: "Dressing gown", price: "£19.99"),
+                Product(image: #imageLiteral(resourceName: "bra"), title: "Bra", price: "£9.99"),
+                Product(image: #imageLiteral(resourceName: "vase"), title: "Tulips", price: "£5.99"),
+                Product(image: #imageLiteral(resourceName: "dressing-gown"), title: "Dressing gown", price: "£19.99"),
+                Product(image: #imageLiteral(resourceName: "bra"), title: "Bra", price: "£9.99"),
+                Product(image: #imageLiteral(resourceName: "vase"), title: "Tulips", price: "£5.99"),
+                Product(image: #imageLiteral(resourceName: "dressing-gown"), title: "Dressing gown", price: "£19.99"),
+                Product(image: #imageLiteral(resourceName: "bra"), title: "Bra", price: "£9.99"),
                 Product(image: #imageLiteral(resourceName: "vase"), title: "Tulips", price: "£5.99")]

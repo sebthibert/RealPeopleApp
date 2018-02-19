@@ -4,6 +4,10 @@ class GalleryViewController: UIViewController {
   @IBOutlet weak var galleryCollectionView: UICollectionView!
   @IBOutlet var departmentButtonCollection: [UIButton]!
   @IBOutlet weak var borderView: UIView!
+
+  let cellMargin: CGFloat = 10
+  var collectionViewItems: [GalleryItem] = []
+  var selectedDepartmentButton: UIButton = UIButton()
   
   @IBAction func departmentButtonPressed(_ sender: UIButton) {
     setupDepartmentButtons()
@@ -30,9 +34,6 @@ class GalleryViewController: UIViewController {
     reloadCollectionView()
   }
 
-  let cellMargin: CGFloat = 10
-  var collectionViewItems: [GalleryItem] = []
-  var selectedDepartmentButton: UIButton = UIButton()
 
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -46,6 +47,9 @@ class GalleryViewController: UIViewController {
     if segue.identifier == "showItem", let imageModel = sender as? GalleryItem, let galleryItemViewController = segue.destination as? GalleryItemViewController {
       galleryItemViewController.galleryItem = imageModel
     }
+
+    if segue.identifier == "showTermsAndConditions" {}
+    if segue.identifier == "showUpload" {}
   }
 
   override var prefersStatusBarHidden: Bool {
@@ -66,11 +70,11 @@ class GalleryViewController: UIViewController {
     overlayView.buttonImage = #imageLiteral(resourceName: "camera-white")
     
     overlayView.addItem("Upload your own", icon: #imageLiteral(resourceName: "camera-black"), handler: { item in
-      
+      self.performSegue(withIdentifier: "showUpload", sender: nil)
     })
 
-    overlayView.addItem("Terms and conditions", icon: nil, handler: { item in
-
+    overlayView.addItem("Terms and conditions", icon: #imageLiteral(resourceName: "info"), handler: { item in
+      self.performSegue(withIdentifier: "showTermsAndConditions", sender: nil)
     })
 
     view.addSubview(overlayView)
