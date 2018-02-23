@@ -40,7 +40,9 @@ class UploadViewController: UIViewController {
   }
 
   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-    if segue.identifier == "showAddItems" {}
+    if segue.identifier == "showAddItems", let linkItemsViewController = segue.destination as? LinkItemsViewController {
+      linkItemsViewController.submissionImage = selectedImageView.image
+    }
   }
 
   func setupTapGestures() {

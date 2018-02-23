@@ -3,13 +3,25 @@ import UIKit
 class SubmitViewController: UIViewController {
   @IBOutlet weak var checkboxView: UIView!
   @IBOutlet weak var checkboxImageView: UIImageView!
+  @IBOutlet weak var selectedImageView: UIImageView!
+  @IBOutlet weak var emailTextField: UITextField!
+  @IBOutlet weak var usernameTextField: UITextField!
+
+  var submissionImage: UIImage!
+  var submissionProducts: [Product]!
   
   @IBAction func backButtonPressed(_ sender: Any) {
     dismiss(animated: true, completion: nil)
   }
 
+  @IBAction func submitButtonPressed(_ sender: Any) {
+    let submission = Submission(image: submissionImage, products: submissionProducts, email: emailTextField.text ?? "", username: usernameTextField.text ?? "")
+    print(submission)
+  }
+
   override func viewDidLoad() {
     super.viewDidLoad()
+    selectedImageView.image = submissionImage
     setupTapGestures()
   }
 
@@ -25,12 +37,12 @@ class SubmitViewController: UIViewController {
 
 extension SubmitViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
   func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-    return 6
+    return submissionProducts.count
   }
 
   func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
     let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CollectionViewCell", for: indexPath) as! ProductCollectionViewCell
-    cell.imageView.image = products[indexPath.row].image
+    cell.imageView.image = submissionProducts[indexPath.row].image
     return cell
   }
 

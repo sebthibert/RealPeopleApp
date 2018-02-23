@@ -301,7 +301,6 @@
                                 </state>
                                 <connections>
                                     <action selector="backButtonPressed:" destination="Lb9-PF-FPZ" eventType="touchUpInside" id="a2X-h7-m3O"/>
-                                    <action selector="nextButtonPressed:" destination="x0X-i2-x4f" eventType="touchUpInside" id="iAx-Gy-73C"/>
                                 </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="6pX-Kp-c57">
@@ -533,7 +532,7 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Bnf-Za-BT6">
                                                 <rect key="frame" x="0.0" y="0.0" width="355" height="302"/>
                                                 <subviews>
-                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="man" translatesAutoresizingMaskIntoConstraints="NO" id="hb7-Gh-DLT">
+                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="hb7-Gh-DLT">
                                                         <rect key="frame" x="37" y="10" width="281.5" height="282"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" secondItem="hb7-Gh-DLT" secondAttribute="height" multiplier="1:1" id="HAD-MZ-WP0"/>
@@ -720,8 +719,6 @@
                                 </state>
                                 <connections>
                                     <action selector="backButtonPressed:" destination="SAB-2A-6DE" eventType="touchUpInside" id="C2o-VA-tI1"/>
-                                    <action selector="backButtonPressed:" destination="Lb9-PF-FPZ" eventType="touchUpInside" id="D7O-1L-BL2"/>
-                                    <action selector="nextButtonPressed:" destination="x0X-i2-x4f" eventType="touchUpInside" id="zxl-p6-Iod"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gtX-IZ-DHL">
@@ -735,9 +732,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <action selector="backButtonPressed:" destination="SAB-2A-6DE" eventType="touchUpInside" id="YTE-Rm-ECP"/>
-                                    <action selector="backButtonPressed:" destination="Lb9-PF-FPZ" eventType="touchUpInside" id="vAn-d1-3mB"/>
-                                    <action selector="nextButtonPressed:" destination="x0X-i2-x4f" eventType="touchUpInside" id="W90-i8-VJ9"/>
+                                    <action selector="submitButtonPressed:" destination="SAB-2A-6DE" eventType="touchUpInside" id="blt-ap-Mxg"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -757,6 +752,9 @@
                     <connections>
                         <outlet property="checkboxImageView" destination="r3z-0g-Kg7" id="Xyi-YH-cXo"/>
                         <outlet property="checkboxView" destination="0dU-BT-5Pt" id="T78-Ep-n1i"/>
+                        <outlet property="emailTextField" destination="sB7-ut-i8v" id="1sG-Lf-jDe"/>
+                        <outlet property="selectedImageView" destination="hb7-Gh-DLT" id="fsf-pu-6Fh"/>
+                        <outlet property="usernameTextField" destination="Vur-gu-4fY" id="rvO-GX-Dyh"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TWT-GL-VpT" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -769,7 +767,6 @@
         <image name="close" width="32" height="32"/>
         <image name="facebook" width="150" height="150"/>
         <image name="instagram" width="170" height="170"/>
-        <image name="man" width="180" height="180"/>
         <image name="placeholder" width="200" height="300"/>
         <image name="tick" width="14" height="10"/>
     </resources>

@@ -44,8 +44,8 @@ class GalleryViewController: UIViewController {
   }
 
   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-    if segue.identifier == "showItem", let imageModel = sender as? GalleryItem, let galleryItemViewController = segue.destination as? GalleryItemViewController {
-      galleryItemViewController.galleryItem = imageModel
+    if segue.identifier == "showItem", let galleryItem = sender as? GalleryItem, let galleryItemViewController = segue.destination as? GalleryItemViewController {
+      galleryItemViewController.galleryItem = galleryItem
     }
 
     if segue.identifier == "showTermsAndConditions" {}

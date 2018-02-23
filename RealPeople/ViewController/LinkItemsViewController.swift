@@ -9,6 +9,8 @@ class LinkItemsViewController: UIViewController {
   let cellMargin: CGFloat = 10
   var productsSelectedCount: Int = 0
   var collectionViewSelectedCellIndexes: [IndexPath] = []
+  var submissionImage: UIImage!
+  var submissionProducts: [Product] = []
 
   var allProductsSelected: Bool {
     return productsSelectedCount == productSlotImages.count
@@ -33,7 +35,10 @@ class LinkItemsViewController: UIViewController {
   }
 
   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-    if segue.identifier == "showSubmit" {}
+    if segue.identifier == "showSubmit", let submitViewController = segue.destination as? SubmitViewController {
+      submitViewController.submissionImage = submissionImage
+      submitViewController.submissionProducts = submissionProducts
+    }
   }
 
   func selectProduct(_ selectedProduct: Product) {
@@ -44,6 +49,7 @@ class LinkItemsViewController: UIViewController {
     for slot in productSlotImages.reversed() {
       if !slot.isHidden {
         slot.image = selectedProduct.image
+        submissionProducts.append(selectedProduct)
         addRemoveButton(to: slot)
         productsSelectedCount += 1
         if index == productSlotImages.count {
@@ -60,6 +66,7 @@ class LinkItemsViewController: UIViewController {
   func deselectProduct(at index: Int) {
     let slotImage = productSlotImages[index]
     slotImage.superview?.removeFromSuperview()
+    submissionProducts.remove(at: index)
     productSlotImages.remove(at: index)
     updateRemoveButtonTags(after: index)
     let indexPath = collectionViewSelectedCellIndexes[index]
