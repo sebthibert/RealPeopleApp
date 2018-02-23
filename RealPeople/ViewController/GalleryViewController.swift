@@ -52,10 +52,6 @@ class GalleryViewController: UIViewController {
     if segue.identifier == "showUpload" {}
   }
 
-  override var prefersStatusBarHidden: Bool {
-    return true
-  }
-
   func setupDepartmentButtons() {
     for button in departmentButtonCollection {
       button.backgroundColor = .buttonGrey

@@ -14,10 +14,6 @@ class GalleryItemViewController: UIViewController {
     setupView()
   }
 
-  override var prefersStatusBarHidden: Bool {
-    return true
-  }
-
   func setupView() {
     imageView.image = galleryItem.image
   }

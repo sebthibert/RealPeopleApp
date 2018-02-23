@@ -43,10 +43,6 @@ class UploadViewController: UIViewController {
     if segue.identifier == "showAddItems" {}
   }
 
-  override var prefersStatusBarHidden: Bool {
-    return true
-  }
-
   func setupTapGestures() {
     let largeCameraTapGesture = UITapGestureRecognizer(target: self, action: #selector(cameraTapped))
     let largeInstagramTapGesture = UITapGestureRecognizer(target: self, action: #selector(tapped))

@@ -36,10 +36,6 @@ class LinkItemsViewController: UIViewController {
     if segue.identifier == "showSubmit" {}
   }
 
-  override var prefersStatusBarHidden: Bool {
-    return true
-  }
-
   func selectProduct(_ selectedProduct: Product) {
     guard !allProductsSelected else {
       return
