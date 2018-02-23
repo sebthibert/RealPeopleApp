@@ -2,17 +2,17 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "Screen Shot 2018-02-04 at 20.02.39.png",
+      "filename" : "home-towels.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
-      "filename" : "Screen Shot 2018-02-04 at 20.02.39-1.png",
+      "filename" : "home-towels-1.png",
       "scale" : "2x"
     },
     {
       "idiom" : "universal",
-      "filename" : "Screen Shot 2018-02-04 at 20.02.39-2.png",
+      "filename" : "home-towels-2.png",
       "scale" : "3x"
     }
   ],

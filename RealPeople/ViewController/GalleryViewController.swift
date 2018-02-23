@@ -27,8 +27,8 @@ class GalleryViewController: UIViewController {
     sender.setTitleColor(.white, for: .normal)
     selectedDepartmentButton = sender
 
-    collectionViewItems = galleryItems.filter { image -> Bool in
-      return image.department == departmentText
+    collectionViewItems = galleryItems.filter { galleryItem -> Bool in
+      return galleryItem.department == departmentText
     }
 
     reloadCollectionView()

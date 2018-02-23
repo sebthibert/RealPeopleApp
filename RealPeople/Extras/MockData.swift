@@ -27,15 +27,13 @@ let galleryItems = [GalleryItem(image: #imageLiteral(resourceName: "beauty"), de
               GalleryItem(image: #imageLiteral(resourceName: "woman-6"), department: "women", description: "woman-6", submittedBy: "splebbo", date: "3 Feb 2018"),
               GalleryItem(image: #imageLiteral(resourceName: "woman-7"), department: "women", description: "woman-7", submittedBy: "splebbo", date: "3 Feb 2018")]
 
-let products = [Product(image: #imageLiteral(resourceName: "dressing-gown"), title: "Dressing gown", price: "£19.99"),
-                Product(image: #imageLiteral(resourceName: "bra"), title: "Bra", price: "£9.99"),
-                Product(image: #imageLiteral(resourceName: "vase"), title: "Tulips", price: "£5.99"),
-                Product(image: #imageLiteral(resourceName: "dressing-gown"), title: "Dressing gown", price: "£19.99"),
-                Product(image: #imageLiteral(resourceName: "bra"), title: "Bra", price: "£9.99"),
-                Product(image: #imageLiteral(resourceName: "vase"), title: "Tulips", price: "£5.99"),
-                Product(image: #imageLiteral(resourceName: "dressing-gown"), title: "Dressing gown", price: "£19.99"),
-                Product(image: #imageLiteral(resourceName: "bra"), title: "Bra", price: "£9.99"),
-                Product(image: #imageLiteral(resourceName: "vase"), title: "Tulips", price: "£5.99"),
-                Product(image: #imageLiteral(resourceName: "dressing-gown"), title: "Dressing gown", price: "£19.99"),
-                Product(image: #imageLiteral(resourceName: "bra"), title: "Bra", price: "£9.99"),
-                Product(image: #imageLiteral(resourceName: "vase"), title: "Tulips", price: "£5.99")]
+let products = [Product(image: #imageLiteral(resourceName: "men-top"), title: "Jacket", price: "£39.99", department: "men"),
+                Product(image: #imageLiteral(resourceName: "men-trousers"), title: "Chinos", price: "£19.99", department: "men"),
+                Product(image: #imageLiteral(resourceName: "women-top"), title: "Top", price: "£9.99", department: "women"),
+                Product(image: #imageLiteral(resourceName: "women-trousers"), title: "Trousers", price: "£19.99", department: "women"),
+                Product(image: #imageLiteral(resourceName: "home-bed"), title: "Bedding", price: "£49.99", department: "home"),
+                Product(image: #imageLiteral(resourceName: "home-towels"), title: "Towels", price: "£5.99", department: "home"),
+                Product(image: #imageLiteral(resourceName: "cheese"), title: "Cheese", price: "£19.99", department: "food"),
+                Product(image: #imageLiteral(resourceName: "ham"), title: "Ham", price: "£19.99", department: "food"),
+                Product(image: #imageLiteral(resourceName: "kids-boy"), title: "Jumper", price: "£9.99", department: "kids"),
+                Product(image: #imageLiteral(resourceName: "kids-girl"), title: "Dress", price: "£14.99", department: "kids")]

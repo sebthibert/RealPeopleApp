@@ -19,7 +19,7 @@ class UploadViewController: UIViewController {
   }
   
   @IBAction func nextButtonPressed(_ sender: Any) {
-    performSegue(withIdentifier: "showAddItems", sender: nil)
+    performSegue(withIdentifier: "showProduct", sender: nil)
   }
 
   override func viewDidLoad() {
@@ -40,8 +40,8 @@ class UploadViewController: UIViewController {
   }
 
   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-    if segue.identifier == "showAddItems", let linkItemsViewController = segue.destination as? LinkItemsViewController {
-      linkItemsViewController.submissionImage = selectedImageView.image
+    if segue.identifier == "showProduct", let productViewController = segue.destination as? ProductViewController {
+      productViewController.submissionImage = selectedImageView.image
     }
   }
 

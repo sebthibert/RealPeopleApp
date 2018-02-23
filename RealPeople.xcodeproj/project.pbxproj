@@ -26,7 +26,7 @@
 		BC9008C6203614BC005C656A /* TermsAndConditionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC9008C5203614BC005C656A /* TermsAndConditionsViewController.swift */; };
 		BC9008C8203615E0005C656A /* UploadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC9008C7203615E0005C656A /* UploadViewController.swift */; };
 		BC9008CD2036EE69005C656A /* Upload.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BC9008CC2036EE69005C656A /* Upload.storyboard */; };
-		BC9008D020372AF0005C656A /* LinkItemsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC9008CF20372AF0005C656A /* LinkItemsViewController.swift */; };
+		BC9008D020372AF0005C656A /* ProductViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC9008CF20372AF0005C656A /* ProductViewController.swift */; };
 		BCA57BAD2025CE0700B75D0F /* MockData.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCA57BAC2025CE0700B75D0F /* MockData.swift */; };
 		BCCF8360203B09EB00DA749F /* SubmitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCCF835F203B09EB00DA749F /* SubmitViewController.swift */; };
 /* End PBXBuildFile section */
@@ -65,7 +65,7 @@
 		BC9008C5203614BC005C656A /* TermsAndConditionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsAndConditionsViewController.swift; sourceTree = "<group>"; };
 		BC9008C7203615E0005C656A /* UploadViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadViewController.swift; sourceTree = "<group>"; };
 		BC9008CC2036EE69005C656A /* Upload.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Upload.storyboard; sourceTree = "<group>"; };
-		BC9008CF20372AF0005C656A /* LinkItemsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkItemsViewController.swift; sourceTree = "<group>"; };
+		BC9008CF20372AF0005C656A /* ProductViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductViewController.swift; sourceTree = "<group>"; };
 		BCA57BAC2025CE0700B75D0F /* MockData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockData.swift; sourceTree = "<group>"; };
 		BCCF835F203B09EB00DA749F /* SubmitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubmitViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -135,7 +135,7 @@
 				BC4FE5222026148100E7A9EE /* GalleryItemViewController.swift */,
 				BC9008C5203614BC005C656A /* TermsAndConditionsViewController.swift */,
 				BC9008C7203615E0005C656A /* UploadViewController.swift */,
-				BC9008CF20372AF0005C656A /* LinkItemsViewController.swift */,
+				BC9008CF20372AF0005C656A /* ProductViewController.swift */,
 				BCCF835F203B09EB00DA749F /* SubmitViewController.swift */,
 			);
 			path = ViewController;
@@ -307,7 +307,7 @@
 				BCCF8360203B09EB00DA749F /* SubmitViewController.swift in Sources */,
 				BC9008C6203614BC005C656A /* TermsAndConditionsViewController.swift in Sources */,
 				BC4FE5232026148100E7A9EE /* GalleryItemViewController.swift in Sources */,
-				BC9008D020372AF0005C656A /* LinkItemsViewController.swift in Sources */,
+				BC9008D020372AF0005C656A /* ProductViewController.swift in Sources */,
 				BC0F4D2E2025B13A00559387 /* AppDelegate.swift in Sources */,
 				BC3559D72027A98B003AF651 /* Product.swift in Sources */,
 				BC1F940B20405F4D00556EB5 /* Submission.swift in Sources */,

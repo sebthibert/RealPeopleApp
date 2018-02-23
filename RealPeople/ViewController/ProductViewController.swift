@@ -1,19 +1,46 @@
 import UIKit
 
-class LinkItemsViewController: UIViewController {
+class ProductViewController: UIViewController {
 
   @IBOutlet weak var productSlotStackView: UIStackView!
   @IBOutlet weak var collectionView: UICollectionView!
   @IBOutlet var productSlotImages: [UIImageView]!
+  @IBOutlet var departmentButtonCollection: [UIButton]!
 
-  let cellMargin: CGFloat = 10
   var productsSelectedCount: Int = 0
   var collectionViewSelectedCellIndexes: [IndexPath] = []
   var submissionImage: UIImage!
   var submissionProducts: [Product] = []
+  var selectedDepartmentButton: UIButton = UIButton()
+  var collectionViewItems: [Product] = []
 
   var allProductsSelected: Bool {
     return productsSelectedCount == productSlotImages.count
+  }
+
+  @IBAction func departmentButtonPressed(_ sender: UIButton) {
+    setupDepartmentButtons()
+
+    guard let departmentText = sender.titleLabel?.text?.lowercased() else {
+      return
+    }
+
+    guard sender != selectedDepartmentButton else {
+      selectedDepartmentButton = UIButton()
+      collectionViewItems = products
+      collectionView.reloadData()
+      return
+    }
+
+    sender.backgroundColor = .buttonSelectedGrey
+    sender.setTitleColor(.white, for: .normal)
+    selectedDepartmentButton = sender
+
+    collectionViewItems = products.filter { productItem -> Bool in
+      return productItem.department == departmentText
+    }
+
+    collectionView.reloadData()
   }
 
   @IBAction func nextButtonPressed(_ sender: Any) {
@@ -31,7 +58,9 @@ class LinkItemsViewController: UIViewController {
 
   override func viewDidLoad() {
     super.viewDidLoad()
+    setupDepartmentButtons()
     collectionView.allowsMultipleSelection = true
+    collectionViewItems = products
   }
 
   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -118,24 +147,40 @@ class LinkItemsViewController: UIViewController {
   func updateCollectionView(at indexPath: IndexPath) {
     collectionView.reloadItems(at: [indexPath])
   }
+
+  func setupDepartmentButtons() {
+    for button in departmentButtonCollection {
+      button.backgroundColor = .buttonGrey
+      button.setTitleColor(.black, for: .normal)
+      button.layer.masksToBounds = true
+      button.layer.cornerRadius = 8
+    }
+  }
 }
 
-extension LinkItemsViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+extension ProductViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
   func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-    return products.count
+    return collectionViewItems.count
   }
   
   func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
     let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CollectionViewCell", for: indexPath) as! ProductCollectionViewCell
-    cell.addBorder()
-    cell.imageView.image = products[indexPath.row].image
-    cell.titleLabel.text = products[indexPath.row].title
-    cell.priceLabel.text = products[indexPath.row].price
+    cell.imageView.image = collectionViewItems[indexPath.row].image
+    cell.titleLabel.text = collectionViewItems[indexPath.row].title
+    cell.priceLabel.text = collectionViewItems[indexPath.row].price
+    let productSelected = submissionProducts.contains { product -> Bool in
+      return product.title == cell.titleLabel.text
+    }
+    let borderWidth: CGFloat = productSelected ? 2 : 1
+    let borderColor: UIColor = productSelected ? .black  : .buttonSelectedGrey
+    cell.addBorder(width: borderWidth, color: borderColor)
+    cell.isSelected = productSelected
     return cell
   }
 
   func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
     let columnCount: CGFloat = 4
+    let cellMargin: CGFloat = 10
     let collectionViewInsets = (cellMargin * (columnCount - 1))
     let cellWidth = (collectionView.frame.width - collectionViewInsets) / columnCount
     let cellHeight = cellWidth * 2
@@ -146,9 +191,9 @@ extension LinkItemsViewController: UICollectionViewDelegate, UICollectionViewDat
     guard !allProductsSelected else {
       return
     }
-    collectionView.cellForItem(at: indexPath)?.addBorder(width: 3, color: .black)
+    collectionView.cellForItem(at: indexPath)?.addBorder(width: 2, color: .black)
     collectionViewSelectedCellIndexes.append(indexPath)
-    selectProduct(products[indexPath.row])
+    selectProduct(collectionViewItems[indexPath.row])
   }
 
   func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
