@@ -12,7 +12,7 @@ class OverlayView: UIView {
 
   init() {
     super.init(frame: CGRect(x: 0, y: 0, width: size, height: size))
-    backgroundColor = UIColor.clear
+    backgroundColor = .clear
   }
 
   required init?(coder aDecoder: NSCoder) {
@@ -115,7 +115,6 @@ class OverlayView: UIView {
     overlayView.backgroundColor = UIColor.black.withAlphaComponent(0.7)
     overlayView.alpha = 0
     overlayView.isUserInteractionEnabled = true
-
   }
 
   private func setOverlayFrame() {

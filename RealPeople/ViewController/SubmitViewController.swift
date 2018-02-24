@@ -16,6 +16,8 @@ class SubmitViewController: UIViewController {
 
   @IBAction func submitButtonPressed(_ sender: Any) {
     let submission = Submission(image: submissionImage, products: submissionProducts, email: emailTextField.text ?? "", username: usernameTextField.text ?? "")
+    let submitOverlay = SubmitOverlay()
+    view.addSubview(submitOverlay)
     print(submission)
   }
 

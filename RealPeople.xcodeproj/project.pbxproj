@@ -15,6 +15,7 @@
 		BC0F4D432025B13A00559387 /* RealPeopleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC0F4D422025B13A00559387 /* RealPeopleTests.swift */; };
 		BC0F4D512025BC1B00559387 /* GalleryItemCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC0F4D4F2025BC1B00559387 /* GalleryItemCollectionViewCell.swift */; };
 		BC1F940B20405F4D00556EB5 /* Submission.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC1F940A20405F4D00556EB5 /* Submission.swift */; };
+		BC1F940D20415D0300556EB5 /* SubmitOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC1F940C20415D0300556EB5 /* SubmitOverlay.swift */; };
 		BC3559CB20279F6D003AF651 /* ProductCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC3559CA20279F6D003AF651 /* ProductCollectionViewCell.swift */; };
 		BC3559D02027A914003AF651 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC3559CF2027A914003AF651 /* UIColor.swift */; };
 		BC3559D22027A933003AF651 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC3559D12027A933003AF651 /* UIView.swift */; };
@@ -54,6 +55,7 @@
 		BC0F4D442025B13A00559387 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BC0F4D4F2025BC1B00559387 /* GalleryItemCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryItemCollectionViewCell.swift; sourceTree = "<group>"; };
 		BC1F940A20405F4D00556EB5 /* Submission.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Submission.swift; sourceTree = "<group>"; };
+		BC1F940C20415D0300556EB5 /* SubmitOverlay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubmitOverlay.swift; sourceTree = "<group>"; };
 		BC3559CA20279F6D003AF651 /* ProductCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCollectionViewCell.swift; sourceTree = "<group>"; };
 		BC3559CF2027A914003AF651 /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
 		BC3559D12027A933003AF651 /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
@@ -148,6 +150,7 @@
 				BC9008C1203600F8005C656A /* OverlayItem.swift */,
 				BC0F4D4F2025BC1B00559387 /* GalleryItemCollectionViewCell.swift */,
 				BC3559CA20279F6D003AF651 /* ProductCollectionViewCell.swift */,
+				BC1F940C20415D0300556EB5 /* SubmitOverlay.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -304,6 +307,7 @@
 				BC3559D02027A914003AF651 /* UIColor.swift in Sources */,
 				BCA57BAD2025CE0700B75D0F /* MockData.swift in Sources */,
 				BC9008C4203600F8005C656A /* OverlayView.swift in Sources */,
+				BC1F940D20415D0300556EB5 /* SubmitOverlay.swift in Sources */,
 				BCCF8360203B09EB00DA749F /* SubmitViewController.swift in Sources */,
 				BC9008C6203614BC005C656A /* TermsAndConditionsViewController.swift in Sources */,
 				BC4FE5232026148100E7A9EE /* GalleryItemViewController.swift in Sources */,
