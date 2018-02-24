@@ -11,6 +11,7 @@ class UploadViewController: UIViewController {
   @IBOutlet weak var smallInstagramView: UIView!
   @IBOutlet weak var smallFacebookView: UIView!
   @IBOutlet weak var selectedImageView: UIImageView!
+  @IBOutlet weak var nextButton: UIButton!
 
   let imagePicker = UIImagePickerController()
 
@@ -26,6 +27,7 @@ class UploadViewController: UIViewController {
     super.viewDidLoad()
     imagePicker.delegate = self
     setupTapGestures()
+    validate()
   }
 
   override func viewDidAppear(_ animated: Bool) {
@@ -97,6 +99,17 @@ class UploadViewController: UIViewController {
       delay += 0.1
     }
   }
+
+  func validate() {
+    guard selectedImageView.image != nil else {
+      nextButton.isEnabled = false
+      nextButton.alpha = 0
+      return
+    }
+
+    nextButton.isEnabled = true
+    nextButton.alpha = 1
+  }
 }
 
 extension UploadViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
@@ -106,6 +119,7 @@ extension UploadViewController: UIImagePickerControllerDelegate, UINavigationCon
       selectedImageView.contentMode = .scaleAspectFit
       selectedImageView.image = selectedImage
       smallStackView.isHidden = false
+      validate()
     }
 
     dismiss(animated: true, completion: nil)

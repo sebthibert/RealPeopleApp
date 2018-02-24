@@ -6,6 +6,7 @@ class ProductViewController: UIViewController {
   @IBOutlet weak var collectionView: UICollectionView!
   @IBOutlet var productSlotImages: [UIImageView]!
   @IBOutlet var departmentButtonCollection: [UIButton]!
+  @IBOutlet weak var nextButton: UIButton!
 
   var productsSelectedCount: Int = 0
   var collectionViewSelectedCellIndexes: [IndexPath] = []
@@ -58,6 +59,7 @@ class ProductViewController: UIViewController {
 
   override func viewDidLoad() {
     super.viewDidLoad()
+    validate()
     setupDepartmentButtons()
     collectionView.allowsMultipleSelection = true
     collectionViewItems = products
@@ -81,6 +83,7 @@ class ProductViewController: UIViewController {
         submissionProducts.append(selectedProduct)
         addRemoveButton(to: slot)
         productsSelectedCount += 1
+        validate()
         if index == productSlotImages.count {
           return
         } else {
@@ -104,6 +107,7 @@ class ProductViewController: UIViewController {
     productsSelectedCount -= 1
     let isHidden = productsSelectedCount == productSlotImages.count ? false : true
     appendNewSlot(isHidden: isHidden)
+    validate()
   }
 
   func addRemoveButton(to slot: UIView) {
@@ -155,6 +159,17 @@ class ProductViewController: UIViewController {
       button.layer.masksToBounds = true
       button.layer.cornerRadius = 8
     }
+  }
+
+  func validate() {
+    guard submissionProducts.count > 0 else {
+      nextButton.isEnabled = false
+      nextButton.alpha = 0
+      return
+    }
+
+    nextButton.isEnabled = true
+    nextButton.alpha = 1
   }
 }
 

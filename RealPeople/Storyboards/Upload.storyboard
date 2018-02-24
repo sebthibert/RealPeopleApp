@@ -248,6 +248,7 @@
                         <outlet property="largeCameraView" destination="pZ9-ls-ISG" id="Clb-sw-Tte"/>
                         <outlet property="largeFacebookView" destination="NJE-O5-Qda" id="pQg-yd-guM"/>
                         <outlet property="largeInstagramView" destination="vsD-fQ-hRQ" id="FyJ-ua-zSj"/>
+                        <outlet property="nextButton" destination="zCS-M0-VMp" id="ZPa-bX-U6L"/>
                         <outlet property="selectedImageView" destination="OUh-xE-iND" id="RBm-h2-RH9"/>
                         <outlet property="smallCameraView" destination="bS7-da-a05" id="g8B-hf-tqF"/>
                         <outlet property="smallFacebookView" destination="c4U-XA-Ip0" id="JNV-3x-gIB"/>
@@ -564,6 +565,7 @@
                     </view>
                     <connections>
                         <outlet property="collectionView" destination="IpJ-Ue-rdr" id="R3O-g6-ZUH"/>
+                        <outlet property="nextButton" destination="WmS-d9-gUo" id="VRf-ux-zsv"/>
                         <outlet property="productSlotStackView" destination="KOh-Q4-WRi" id="ctI-9q-k0i"/>
                         <outletCollection property="productSlotImages" destination="LsZ-tr-b6w" collectionClass="NSMutableArray" id="gHf-w1-NUp"/>
                         <outletCollection property="productSlotImages" destination="6Lx-Yd-sv6" collectionClass="NSMutableArray" id="pBO-rZ-l8q"/>
@@ -821,6 +823,7 @@
                         <outlet property="checkboxView" destination="0dU-BT-5Pt" id="T78-Ep-n1i"/>
                         <outlet property="emailTextField" destination="sB7-ut-i8v" id="1sG-Lf-jDe"/>
                         <outlet property="selectedImageView" destination="hb7-Gh-DLT" id="fsf-pu-6Fh"/>
+                        <outlet property="submitButton" destination="gtX-IZ-DHL" id="Psc-Pd-iz5"/>
                         <outlet property="usernameTextField" destination="Vur-gu-4fY" id="rvO-GX-Dyh"/>
                     </connections>
                 </viewController>

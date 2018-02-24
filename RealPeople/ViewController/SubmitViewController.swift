@@ -6,6 +6,7 @@ class SubmitViewController: UIViewController {
   @IBOutlet weak var selectedImageView: UIImageView!
   @IBOutlet weak var emailTextField: UITextField!
   @IBOutlet weak var usernameTextField: UITextField!
+  @IBOutlet weak var submitButton: UIButton!
 
   var submissionImage: UIImage!
   var submissionProducts: [Product]!
@@ -34,6 +35,21 @@ class SubmitViewController: UIViewController {
 
   @objc func toggleCheckbox() {
     checkboxImageView.isHidden = !checkboxImageView.isHidden
+  }
+
+  func validate() {
+    guard (emailTextField.text != nil) else {
+      submitButton.isEnabled = false
+      submitButton.alpha = 0
+      return
+    }
+    guard (usernameTextField.text != nil) else {
+      submitButton.isEnabled = false
+      submitButton.alpha = 0
+      return
+    }
+    submitButton.isEnabled = true
+    submitButton.alpha = 1
   }
 }
 
