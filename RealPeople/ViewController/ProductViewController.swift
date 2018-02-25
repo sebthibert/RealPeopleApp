@@ -1,11 +1,10 @@
 import UIKit
 
 class ProductViewController: UIViewController {
-
+  @IBOutlet weak var searchHeaderView: SearchHeaderView!
   @IBOutlet weak var productSlotStackView: UIStackView!
-  @IBOutlet weak var collectionView: UICollectionView!
+  @IBOutlet weak var productCollectionView: UICollectionView!
   @IBOutlet var productSlotImages: [UIImageView]!
-  @IBOutlet var departmentButtonCollection: [UIButton]!
   @IBOutlet weak var nextButton: UIButton!
 
   var productsSelectedCount: Int = 0
@@ -17,31 +16,6 @@ class ProductViewController: UIViewController {
 
   var allProductsSelected: Bool {
     return productsSelectedCount == productSlotImages.count
-  }
-
-  @IBAction func departmentButtonPressed(_ sender: UIButton) {
-    setupDepartmentButtons()
-
-    guard let departmentText = sender.titleLabel?.text?.lowercased() else {
-      return
-    }
-
-    guard sender != selectedDepartmentButton else {
-      selectedDepartmentButton = UIButton()
-      collectionViewItems = products
-      collectionView.reloadData()
-      return
-    }
-
-    sender.backgroundColor = .buttonSelectedGrey
-    sender.setTitleColor(.white, for: .normal)
-    selectedDepartmentButton = sender
-
-    collectionViewItems = products.filter { productItem -> Bool in
-      return productItem.department == departmentText
-    }
-
-    collectionView.reloadData()
   }
 
   @IBAction func nextButtonPressed(_ sender: Any) {
@@ -60,9 +34,9 @@ class ProductViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     validate()
-    setupDepartmentButtons()
-    collectionView.allowsMultipleSelection = true
+    productCollectionView.allowsMultipleSelection = true
     collectionViewItems = products
+    searchHeaderView.delegate = self
   }
 
   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -149,16 +123,7 @@ class ProductViewController: UIViewController {
   }
 
   func updateCollectionView(at indexPath: IndexPath) {
-    collectionView.reloadItems(at: [indexPath])
-  }
-
-  func setupDepartmentButtons() {
-    for button in departmentButtonCollection {
-      button.backgroundColor = .buttonGrey
-      button.setTitleColor(.black, for: .normal)
-      button.layer.masksToBounds = true
-      button.layer.cornerRadius = 8
-    }
+    productCollectionView.reloadItems(at: [indexPath])
   }
 
   func validate() {
@@ -170,6 +135,28 @@ class ProductViewController: UIViewController {
 
     nextButton.isEnabled = true
     nextButton.alpha = 1
+  }
+}
+
+extension ProductViewController: SearchHeaderDelegate {
+  func resetCollectionViewItems() {
+    collectionViewItems = products
+  }
+
+  func filterCollectionViewByDepartment(_ departmentText: String) {
+    collectionViewItems = products.filter { product -> Bool in
+      return product.department == departmentText
+    }
+  }
+
+  func filterCollectionViewBySearch(_ searchText: String) {
+    collectionViewItems = products.filter { product -> Bool in
+      return product.title.lowercased().contains(searchText)
+    }
+  }
+
+  func reloadCollectionView() {
+    productCollectionView.reloadData()
   }
 }
 

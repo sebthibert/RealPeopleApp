@@ -274,73 +274,25 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="JQi-zs-hrU">
-                                <rect key="frame" x="0.0" y="20" width="375" height="237"/>
-                                <textInputTraits key="textInputTraits"/>
-                                <connections>
-                                    <outlet property="delegate" destination="Lb9-PF-FPZ" id="OUH-D7-2Md"/>
-                                </connections>
-                            </searchBar>
-                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" alignment="center" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="3oC-ss-5Yu">
-                                <rect key="frame" x="10" y="257" width="355" height="60"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EJJ-i0-FuC">
-                                        <rect key="frame" x="0.0" y="15.5" width="89" height="29"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <state key="normal" title="WOMEN"/>
-                                        <connections>
-                                            <action selector="departmentButtonPressed:" destination="Lb9-PF-FPZ" eventType="touchUpInside" id="zZn-IV-tRv"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SLq-YT-Xtk">
-                                        <rect key="frame" x="94" y="15.5" width="50" height="29"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <state key="normal" title="MEN"/>
-                                        <connections>
-                                            <action selector="departmentButtonPressed:" destination="Lb9-PF-FPZ" eventType="touchUpInside" id="PvK-eH-43M"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nHu-w9-sgW">
-                                        <rect key="frame" x="149" y="15.5" width="67.5" height="29"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <state key="normal" title="HOME"/>
-                                        <connections>
-                                            <action selector="departmentButtonPressed:" destination="Lb9-PF-FPZ" eventType="touchUpInside" id="33h-7d-3FQ"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yTf-M4-OXF">
-                                        <rect key="frame" x="221.5" y="15.5" width="64.5" height="29"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <state key="normal" title="FOOD"/>
-                                        <connections>
-                                            <action selector="departmentButtonPressed:" destination="Lb9-PF-FPZ" eventType="touchUpInside" id="mE1-QR-QW7"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2iv-Dy-EVC">
-                                        <rect key="frame" x="291" y="15.5" width="64" height="29"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <state key="normal" title="KIDS"/>
-                                        <connections>
-                                            <action selector="departmentButtonPressed:" destination="Lb9-PF-FPZ" eventType="touchUpInside" id="kgh-TM-QLQ"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lbz-X3-CNM" customClass="SearchHeaderView" customModule="RealPeople" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="116"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="60" id="2mc-t6-KFO"/>
+                                    <constraint firstAttribute="height" constant="116" id="eQP-zc-LAf"/>
                                 </constraints>
-                            </stackView>
+                            </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cOT-qi-ZqY" userLabel="Border View">
-                                <rect key="frame" x="0.0" y="316" width="375" height="1"/>
+                                <rect key="frame" x="0.0" y="115" width="375" height="1"/>
                                 <color key="backgroundColor" red="0.74509803919999995" green="0.74509803919999995" blue="0.74509803919999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="1" id="agK-p5-KOp"/>
                                 </constraints>
                             </view>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="6pX-Kp-c57">
-                                <rect key="frame" x="10" y="317" width="355" height="270"/>
+                                <rect key="frame" x="10" y="116" width="355" height="471"/>
                                 <subviews>
                                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="IpJ-Ue-rdr">
-                                        <rect key="frame" x="0.0" y="0.0" width="355" height="170"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="355" height="371"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="BRi-WY-Ddn">
                                             <size key="itemSize" width="100" height="200"/>
@@ -400,7 +352,7 @@
                                         </connections>
                                     </collectionView>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="KOh-Q4-WRi">
-                                        <rect key="frame" x="0.0" y="170" width="355" height="100"/>
+                                        <rect key="frame" x="0.0" y="371" width="355" height="100"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xGk-AC-WC0">
                                                 <rect key="frame" x="0.0" y="0.0" width="55" height="100"/>
@@ -544,40 +496,33 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="cOT-qi-ZqY" secondAttribute="trailing" id="1ID-mQ-Hp4"/>
-                            <constraint firstItem="Gfb-5M-SPS" firstAttribute="top" secondItem="JQi-zs-hrU" secondAttribute="top" id="A5Q-Fv-GtB"/>
+                            <constraint firstItem="lbz-X3-CNM" firstAttribute="leading" secondItem="Gfb-5M-SPS" secondAttribute="leading" id="2gZ-8R-ZTQ"/>
+                            <constraint firstItem="Gfb-5M-SPS" firstAttribute="trailing" secondItem="lbz-X3-CNM" secondAttribute="trailing" id="4x9-hU-tp4"/>
                             <constraint firstItem="WmS-d9-gUo" firstAttribute="top" secondItem="6pX-Kp-c57" secondAttribute="bottom" constant="20" id="AdX-4o-3MQ"/>
                             <constraint firstItem="sex-Fz-5Wc" firstAttribute="leading" secondItem="Gfb-5M-SPS" secondAttribute="leading" constant="20" id="Apr-Q7-IYB"/>
-                            <constraint firstItem="cOT-qi-ZqY" firstAttribute="bottom" secondItem="3oC-ss-5Yu" secondAttribute="bottom" id="DVD-Ps-t5a"/>
                             <constraint firstItem="6pX-Kp-c57" firstAttribute="leading" secondItem="jz2-RZ-OCU" secondAttribute="leading" constant="10" id="G8R-iY-lPf"/>
+                            <constraint firstItem="6pX-Kp-c57" firstAttribute="top" secondItem="lbz-X3-CNM" secondAttribute="bottom" id="HMr-IL-IKo"/>
                             <constraint firstItem="cOT-qi-ZqY" firstAttribute="leading" secondItem="jz2-RZ-OCU" secondAttribute="leading" id="PJO-8q-ibF"/>
-                            <constraint firstItem="Gfb-5M-SPS" firstAttribute="trailing" secondItem="3oC-ss-5Yu" secondAttribute="trailing" constant="10" id="S3D-Qn-Yp0"/>
+                            <constraint firstItem="lbz-X3-CNM" firstAttribute="top" secondItem="jz2-RZ-OCU" secondAttribute="top" id="RBO-0z-KSt"/>
                             <constraint firstItem="Gfb-5M-SPS" firstAttribute="bottom" secondItem="sex-Fz-5Wc" secondAttribute="bottom" constant="20" id="TrA-Sl-uPB"/>
                             <constraint firstAttribute="trailing" secondItem="6pX-Kp-c57" secondAttribute="trailing" constant="10" id="WKo-IE-8Hl"/>
                             <constraint firstItem="6pX-Kp-c57" firstAttribute="top" secondItem="cOT-qi-ZqY" secondAttribute="bottom" id="Xkk-jx-Jae"/>
-                            <constraint firstItem="JQi-zs-hrU" firstAttribute="trailing" secondItem="Gfb-5M-SPS" secondAttribute="trailing" id="atu-BG-FL0"/>
-                            <constraint firstItem="3oC-ss-5Yu" firstAttribute="leading" secondItem="Gfb-5M-SPS" secondAttribute="leading" constant="10" id="dCQ-Bj-DYa"/>
                             <constraint firstItem="Gfb-5M-SPS" firstAttribute="trailing" secondItem="WmS-d9-gUo" secondAttribute="trailing" constant="20" id="j3q-ca-uYC"/>
                             <constraint firstItem="Gfb-5M-SPS" firstAttribute="bottom" secondItem="WmS-d9-gUo" secondAttribute="bottom" constant="20" id="rEL-s2-2Zo"/>
-                            <constraint firstItem="JQi-zs-hrU" firstAttribute="leading" secondItem="Gfb-5M-SPS" secondAttribute="leading" id="rwU-LE-DxN"/>
-                            <constraint firstItem="3oC-ss-5Yu" firstAttribute="top" secondItem="JQi-zs-hrU" secondAttribute="bottom" id="u3e-gK-9SV"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Gfb-5M-SPS"/>
                     </view>
                     <connections>
-                        <outlet property="collectionView" destination="IpJ-Ue-rdr" id="R3O-g6-ZUH"/>
                         <outlet property="nextButton" destination="WmS-d9-gUo" id="VRf-ux-zsv"/>
+                        <outlet property="productCollectionView" destination="IpJ-Ue-rdr" id="R3O-g6-ZUH"/>
                         <outlet property="productSlotStackView" destination="KOh-Q4-WRi" id="ctI-9q-k0i"/>
+                        <outlet property="searchHeaderView" destination="lbz-X3-CNM" id="UA5-hY-46W"/>
                         <outletCollection property="productSlotImages" destination="LsZ-tr-b6w" collectionClass="NSMutableArray" id="gHf-w1-NUp"/>
                         <outletCollection property="productSlotImages" destination="6Lx-Yd-sv6" collectionClass="NSMutableArray" id="pBO-rZ-l8q"/>
                         <outletCollection property="productSlotImages" destination="dEO-CE-pVm" collectionClass="NSMutableArray" id="rKH-5k-sYV"/>
                         <outletCollection property="productSlotImages" destination="q0Y-7t-q23" collectionClass="NSMutableArray" id="B53-DT-9O9"/>
                         <outletCollection property="productSlotImages" destination="Yc7-nZ-JqV" collectionClass="NSMutableArray" id="S15-B8-IMw"/>
                         <outletCollection property="productSlotImages" destination="gQl-Zs-Rzb" collectionClass="NSMutableArray" id="LTq-TF-lnY"/>
-                        <outletCollection property="departmentButtonCollection" destination="EJJ-i0-FuC" collectionClass="NSMutableArray" id="Ao6-Jm-ph6"/>
-                        <outletCollection property="departmentButtonCollection" destination="SLq-YT-Xtk" collectionClass="NSMutableArray" id="z92-CI-Ssa"/>
-                        <outletCollection property="departmentButtonCollection" destination="nHu-w9-sgW" collectionClass="NSMutableArray" id="OFG-Hh-sVI"/>
-                        <outletCollection property="departmentButtonCollection" destination="yTf-M4-OXF" collectionClass="NSMutableArray" id="ywv-Ni-09H"/>
-                        <outletCollection property="departmentButtonCollection" destination="2iv-Dy-EVC" collectionClass="NSMutableArray" id="F9w-5V-H6k"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Gdb-8M-d85" userLabel="First Responder" sceneMemberID="firstResponder"/>
