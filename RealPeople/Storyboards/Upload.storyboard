@@ -275,7 +275,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="JQi-zs-hrU">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="257"/>
+                                <rect key="frame" x="0.0" y="20" width="375" height="237"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>
                                     <outlet property="delegate" destination="Lb9-PF-FPZ" id="OUH-D7-2Md"/>
@@ -544,7 +544,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="cOT-qi-ZqY" secondAttribute="trailing" id="1ID-mQ-Hp4"/>
-                            <constraint firstItem="JQi-zs-hrU" firstAttribute="top" secondItem="jz2-RZ-OCU" secondAttribute="top" id="7du-p9-LzT"/>
+                            <constraint firstItem="Gfb-5M-SPS" firstAttribute="top" secondItem="JQi-zs-hrU" secondAttribute="top" id="A5Q-Fv-GtB"/>
                             <constraint firstItem="WmS-d9-gUo" firstAttribute="top" secondItem="6pX-Kp-c57" secondAttribute="bottom" constant="20" id="AdX-4o-3MQ"/>
                             <constraint firstItem="sex-Fz-5Wc" firstAttribute="leading" secondItem="Gfb-5M-SPS" secondAttribute="leading" constant="20" id="Apr-Q7-IYB"/>
                             <constraint firstItem="cOT-qi-ZqY" firstAttribute="bottom" secondItem="3oC-ss-5Yu" secondAttribute="bottom" id="DVD-Ps-t5a"/>

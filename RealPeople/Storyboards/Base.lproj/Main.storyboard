@@ -68,15 +68,15 @@
                                     <constraint firstAttribute="height" constant="60" id="Ers-41-aDd"/>
                                 </constraints>
                             </stackView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3Lf-Fv-WB4">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3Lf-Fv-WB4" userLabel="Border View">
                                 <rect key="frame" x="0.0" y="135" width="375" height="1"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" red="0.74509803919999995" green="0.74509803919999995" blue="0.74509803919999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="1" id="Tqi-EX-MlX"/>
                                 </constraints>
                             </view>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="xCF-Li-kdA">
-                                <rect key="frame" x="0.0" y="136" width="375" height="531"/>
+                                <rect key="frame" x="10" y="136" width="355" height="521"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="0.0" id="G9w-I3-R1d">
                                     <size key="itemSize" width="150" height="197"/>
@@ -85,7 +85,7 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" reuseIdentifier="CollectionViewCell" id="rdp-so-aMH" customClass="GalleryItemCollectionViewCell" customModule="RealPeople" customModuleProvider="target">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" reuseIdentifier="GalleryItemCollectionViewCell" id="rdp-so-aMH" customClass="GalleryItemCollectionViewCell" customModule="RealPeople" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="150" height="197"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
@@ -147,20 +147,19 @@
                             <constraint firstItem="xCF-Li-kdA" firstAttribute="top" secondItem="eWb-Wh-xAN" secondAttribute="bottom" id="4po-jI-kge"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="top" secondItem="t8L-Tf-Cll" secondAttribute="top" id="6g7-Vb-g43"/>
                             <constraint firstItem="eWb-Wh-xAN" firstAttribute="top" secondItem="t8L-Tf-Cll" secondAttribute="bottom" id="6ge-HF-2l7"/>
-                            <constraint firstItem="xCF-Li-kdA" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="Kly-DV-abQ"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="xCF-Li-kdA" secondAttribute="bottom" constant="10" id="JEq-eQ-fWE"/>
                             <constraint firstItem="3Lf-Fv-WB4" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="VIl-AY-5T6"/>
                             <constraint firstItem="t8L-Tf-Cll" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="big-bO-YI5"/>
                             <constraint firstItem="3Lf-Fv-WB4" firstAttribute="bottom" secondItem="eWb-Wh-xAN" secondAttribute="bottom" id="dlW-Qz-46O"/>
-                            <constraint firstItem="xCF-Li-kdA" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="eUz-4L-lU5"/>
+                            <constraint firstItem="xCF-Li-kdA" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="eUz-4L-lU5"/>
                             <constraint firstItem="t8L-Tf-Cll" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="hPl-Qn-6Ni"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="3Lf-Fv-WB4" secondAttribute="trailing" id="n6V-Ba-J7B"/>
-                            <constraint firstItem="xCF-Li-kdA" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="qo1-nZ-spE"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="eWb-Wh-xAN" secondAttribute="trailing" constant="10" id="sCV-gZ-vdb"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="xCF-Li-kdA" secondAttribute="trailing" constant="10" id="v1f-Ga-4ip"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
-                        <outlet property="borderView" destination="3Lf-Fv-WB4" id="fDE-21-5OV"/>
                         <outlet property="galleryCollectionView" destination="xCF-Li-kdA" id="Rhg-He-KTk"/>
                         <outlet property="searchDisplayController" destination="Q94-a6-rXg" id="Nl0-Iz-7dP"/>
                         <outletCollection property="departmentButtonCollection" destination="NQZ-zw-xWE" collectionClass="NSMutableArray" id="UJY-iy-Ai1"/>
@@ -196,7 +195,6 @@
         <!--Terms And Conditions View Controller-->
         <scene sceneID="mmN-OH-WvT">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="6iK-jN-wcs" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="LDD-Pe-XH6" customClass="TermsAndConditionsViewController" customModule="RealPeople" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="dkg-eY-WOV">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
@@ -230,6 +228,7 @@
                         <viewLayoutGuide key="safeArea" id="mr4-Mg-5NC"/>
                     </view>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6iK-jN-wcs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="140" y="994"/>
         </scene>

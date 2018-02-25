@@ -7,8 +7,8 @@ class OverlayView: UIView {
   let overlayView : UIControl = UIControl()
 
   var items: [OverlayItem] = []
-  var buttonImage: UIImage? = nil
-  var closed: Bool = true
+  var buttonImage = #imageLiteral(resourceName: "camera-white")
+  var closed = true
 
   init() {
     super.init(frame: CGRect(x: 0, y: 0, width: size, height: size))
