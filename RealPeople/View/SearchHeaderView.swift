@@ -34,23 +34,11 @@ class SearchHeaderView: UIView {
 
   required init?(coder aDecoder: NSCoder) {
     super.init(coder: aDecoder)
-    setup()
+    instantiateNib()
   }
 
   override func awakeFromNib() {
     setupDepartmentButtons()
-  }
-
-  private func setup() {
-    let bundle = Bundle(for: type(of: self))
-    let nib = UINib(nibName: String(describing: type(of: self)), bundle: bundle)
-    contentView = nib.instantiate(withOwner: self, options: nil)[0] as? UIView
-    guard let view = contentView else {
-      return
-    }
-    view.frame = bounds
-    view.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-    addSubview(view)
   }
 
   private func setupDepartmentButtons() {
