@@ -20,54 +20,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" alignment="center" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="eWb-Wh-xAN">
-                                <rect key="frame" x="10" y="76" width="355" height="60"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NSO-ZQ-0ce">
-                                        <rect key="frame" x="0.0" y="15.5" width="89" height="29"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <state key="normal" title="WOMEN"/>
-                                        <connections>
-                                            <action selector="departmentButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Fkd-Ge-bN5"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hkg-Wa-Z4I">
-                                        <rect key="frame" x="94" y="15.5" width="50" height="29"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <state key="normal" title="MEN"/>
-                                        <connections>
-                                            <action selector="departmentButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="6BY-li-NIW"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VJu-Zj-tEs">
-                                        <rect key="frame" x="149" y="15.5" width="67.5" height="29"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <state key="normal" title="HOME"/>
-                                        <connections>
-                                            <action selector="departmentButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="i0P-6Q-80B"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qYM-eo-K8m">
-                                        <rect key="frame" x="221.5" y="15.5" width="64.5" height="29"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <state key="normal" title="FOOD"/>
-                                        <connections>
-                                            <action selector="departmentButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="tdU-D6-jeD"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NQZ-zw-xWE">
-                                        <rect key="frame" x="291" y="15.5" width="64" height="29"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <state key="normal" title="KIDS"/>
-                                        <connections>
-                                            <action selector="departmentButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="zCS-DF-ZFP"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oMs-uX-PjM" customClass="SearchHeaderView" customModule="RealPeople" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="20" width="375" height="116"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="60" id="Ers-41-aDd"/>
+                                    <constraint firstAttribute="height" constant="116" id="T7U-Ga-aeE"/>
                                 </constraints>
-                            </stackView>
+                            </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3Lf-Fv-WB4" userLabel="Border View">
                                 <rect key="frame" x="0.0" y="135" width="375" height="1"/>
                                 <color key="backgroundColor" red="0.74509803919999995" green="0.74509803919999995" blue="0.74509803919999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -133,28 +92,18 @@
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="uUG-eM-ZTQ"/>
                                 </connections>
                             </collectionView>
-                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="t8L-Tf-Cll">
-                                <rect key="frame" x="0.0" y="20" width="375" height="56"/>
-                                <textInputTraits key="textInputTraits"/>
-                                <connections>
-                                    <outlet property="delegate" destination="BYZ-38-t0r" id="Bdz-Zn-V0a"/>
-                                </connections>
-                            </searchBar>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="eWb-Wh-xAN" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="48B-Jx-6E8"/>
-                            <constraint firstItem="xCF-Li-kdA" firstAttribute="top" secondItem="eWb-Wh-xAN" secondAttribute="bottom" id="4po-jI-kge"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="top" secondItem="t8L-Tf-Cll" secondAttribute="top" id="6g7-Vb-g43"/>
-                            <constraint firstItem="eWb-Wh-xAN" firstAttribute="top" secondItem="t8L-Tf-Cll" secondAttribute="bottom" id="6ge-HF-2l7"/>
+                            <constraint firstItem="oMs-uX-PjM" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="4om-hM-r6W"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="oMs-uX-PjM" secondAttribute="trailing" id="90E-8N-tsN"/>
+                            <constraint firstItem="oMs-uX-PjM" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="BMU-kY-lxm"/>
+                            <constraint firstItem="xCF-Li-kdA" firstAttribute="top" secondItem="oMs-uX-PjM" secondAttribute="bottom" id="FmQ-hK-HbZ"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="xCF-Li-kdA" secondAttribute="bottom" constant="10" id="JEq-eQ-fWE"/>
                             <constraint firstItem="3Lf-Fv-WB4" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="VIl-AY-5T6"/>
-                            <constraint firstItem="t8L-Tf-Cll" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="big-bO-YI5"/>
-                            <constraint firstItem="3Lf-Fv-WB4" firstAttribute="bottom" secondItem="eWb-Wh-xAN" secondAttribute="bottom" id="dlW-Qz-46O"/>
+                            <constraint firstItem="3Lf-Fv-WB4" firstAttribute="top" secondItem="oMs-uX-PjM" secondAttribute="bottom" constant="-1" id="Ysk-Iz-xNw"/>
                             <constraint firstItem="xCF-Li-kdA" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="eUz-4L-lU5"/>
-                            <constraint firstItem="t8L-Tf-Cll" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="hPl-Qn-6Ni"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="3Lf-Fv-WB4" secondAttribute="trailing" id="n6V-Ba-J7B"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="eWb-Wh-xAN" secondAttribute="trailing" constant="10" id="sCV-gZ-vdb"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="xCF-Li-kdA" secondAttribute="trailing" constant="10" id="v1f-Ga-4ip"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -162,11 +111,7 @@
                     <connections>
                         <outlet property="galleryCollectionView" destination="xCF-Li-kdA" id="Rhg-He-KTk"/>
                         <outlet property="searchDisplayController" destination="Q94-a6-rXg" id="Nl0-Iz-7dP"/>
-                        <outletCollection property="departmentButtonCollection" destination="NQZ-zw-xWE" collectionClass="NSMutableArray" id="UJY-iy-Ai1"/>
-                        <outletCollection property="departmentButtonCollection" destination="VJu-Zj-tEs" collectionClass="NSMutableArray" id="R5Q-mG-Vld"/>
-                        <outletCollection property="departmentButtonCollection" destination="qYM-eo-K8m" collectionClass="NSMutableArray" id="0GF-Df-QC2"/>
-                        <outletCollection property="departmentButtonCollection" destination="NSO-ZQ-0ce" collectionClass="NSMutableArray" id="YtL-1Q-mOx"/>
-                        <outletCollection property="departmentButtonCollection" destination="Hkg-Wa-Z4I" collectionClass="NSMutableArray" id="zPG-RX-fRx"/>
+                        <outlet property="searchHeaderView" destination="oMs-uX-PjM" id="upC-Mh-8Hp"/>
                         <segue destination="nep-a0-lrp" kind="show" identifier="showItem" id="aP4-eE-qIZ"/>
                         <segue destination="LDD-Pe-XH6" kind="presentation" identifier="showTermsAndConditions" modalTransitionStyle="flipHorizontal" id="yW5-jr-ASS"/>
                         <segue destination="sfE-kg-We7" kind="presentation" identifier="showUpload" modalTransitionStyle="flipHorizontal" id="0SB-hQ-sdv"/>

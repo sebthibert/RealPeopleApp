@@ -1,53 +1,21 @@
 import UIKit
 
 class GalleryViewController: UIViewController {
+  @IBOutlet private weak var searchHeaderView: SearchHeaderView?
   @IBOutlet private weak var galleryCollectionView: UICollectionView?
-  @IBOutlet private var departmentButtonCollection: [UIButton]?
 
   private var collectionViewItems: [GalleryItem] = []
-  private var selectedDepartmentButton: UIButton = UIButton()
-  
-  @IBAction private func departmentButtonPressed(_ sender: UIButton) {
-    setupDepartmentButtons()
-    guard sender != selectedDepartmentButton else {
-      selectedDepartmentButton = UIButton()
-      collectionViewItems = galleryItems
-      reloadCollectionView()
-      return
-    }
-    sender.backgroundColor = .buttonSelectedGrey
-    sender.setTitleColor(.white, for: .normal)
-    selectedDepartmentButton = sender
-    guard let departmentText = sender.titleLabel?.text?.lowercased() else {
-      return
-    }
-    collectionViewItems = galleryItems.filter { galleryItem -> Bool in
-      return galleryItem.department == departmentText
-    }
-    reloadCollectionView()
-  }
 
   override func viewDidLoad() {
     super.viewDidLoad()
-    setupDepartmentButtons()
     setupOverlay()
     collectionViewItems = galleryItems
+    searchHeaderView?.delegate = self
   }
 
   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
     if segue.identifier == "showItem", let galleryItem = sender as? GalleryItem, let galleryItemViewController = segue.destination as? GalleryItemViewController {
       galleryItemViewController.galleryItem = galleryItem
-    }
-  }
-
-  private func setupDepartmentButtons() {
-    guard let buttons = departmentButtonCollection else {
-      return
-    }
-    for button in buttons {
-      button.backgroundColor = .buttonGrey
-      button.setTitleColor(.black, for: .normal)
-      button.layer.cornerRadius = 8
     }
   }
 
@@ -61,24 +29,27 @@ class GalleryViewController: UIViewController {
     })
     view.addSubview(overlayView)
   }
-
-  private func reloadCollectionView() {
-    galleryCollectionView?.reloadData()
-  }
 }
 
-extension GalleryViewController: UISearchBarDelegate {
-  func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-    setupDepartmentButtons()
-    guard !searchText.isEmpty else {
-      collectionViewItems = galleryItems
-      reloadCollectionView()
-      return
-    }
+extension GalleryViewController: SearchHeaderDelegate {
+  func resetCollectionViewItems() {
+    collectionViewItems = galleryItems
+  }
+  
+  func filterCollectionViewByDepartment(_ departmentText: String) {
     collectionViewItems = galleryItems.filter { galleryItem -> Bool in
-      return galleryItem.description.contains(searchText.lowercased())
+      return galleryItem.department == departmentText
     }
-    reloadCollectionView()
+  }
+
+  func filterCollectionViewBySearch(_ searchText: String) {
+    collectionViewItems = galleryItems.filter { galleryItem -> Bool in
+      return galleryItem.description.contains(searchText)
+    }
+  }
+
+  func reloadCollectionView() {
+    galleryCollectionView?.reloadData()
   }
 }
 
