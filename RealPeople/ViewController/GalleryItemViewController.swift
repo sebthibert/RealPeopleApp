@@ -1,13 +1,13 @@
 import UIKit
 
 class GalleryItemViewController: UIViewController {
-  @IBOutlet weak var imageView: UIImageView!
+  @IBOutlet private weak var imageView: UIImageView?
 
-  @IBAction func closeButtonPressed(_ sender: Any) {
+  @IBAction private func closeButtonPressed(_ sender: Any) {
     dismiss(animated: true, completion: nil)
   }
 
-  var galleryItem: GalleryItem!
+  var galleryItem: GalleryItem?
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -15,7 +15,10 @@ class GalleryItemViewController: UIViewController {
   }
 
   func setupView() {
-    imageView.image = galleryItem.image
+    guard let image = galleryItem?.image else {
+      return
+    }
+    imageView?.image = image
   }
 }
 
@@ -25,7 +28,7 @@ extension GalleryItemViewController: UICollectionViewDelegate, UICollectionViewD
   }
 
   func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-    let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CollectionViewCell", for: indexPath) as! ProductCollectionViewCell
+    let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ProductCollectionViewCell", for: indexPath) as! ProductCollectionViewCell
     cell.addBorder()
     cell.imageView.image = products[indexPath.row].image
     cell.titleLabel.text = products[indexPath.row].title
