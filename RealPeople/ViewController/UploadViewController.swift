@@ -27,7 +27,7 @@ class UploadViewController: UIViewController {
     super.viewDidLoad()
     imagePicker.delegate = self
     setupTapGestures()
-    validate()
+//    validate()
   }
 
   override func viewDidAppear(_ animated: Bool) {
