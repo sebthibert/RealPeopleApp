@@ -6,6 +6,8 @@ protocol SelectedProductCollectionViewDelegate {
 
 class SelectedProductView: UIView {
   @IBOutlet weak var collectionView: UICollectionView!
+  @IBOutlet weak var instructionLabel: UILabel!
+  
   var selectedItems: [Product] = []
   var delegate: SelectedProductCollectionViewDelegate?
 
@@ -30,6 +32,8 @@ extension SelectedProductView: SelectedProductCellDelegate {
 
 extension SelectedProductView: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
   func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+    let shouldHideLabel = selectedItems.count == 0 ? false : true
+    instructionLabel.isHidden = shouldHideLabel
     return selectedItems.count
   }
 

@@ -154,7 +154,7 @@
                                         <rect key="frame" x="0.0" y="236.5" width="335" height="98.5"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="9Ql-B5-aMN">
-                                                <rect key="frame" x="53.5" y="34.5" width="228.5" height="30"/>
+                                                <rect key="frame" x="53.5" y="35" width="228.5" height="30"/>
                                                 <subviews>
                                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="facebook" translatesAutoresizingMaskIntoConstraints="NO" id="fYQ-8h-0xT">
                                                         <rect key="frame" x="0.0" y="0.0" width="30" height="30"/>
