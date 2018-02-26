@@ -1,13 +1,13 @@
 import UIKit
 
-class OverlayView: UIView {
+class FloatingActionView: UIView {
   let size: CGFloat = 56
   let padding: CGFloat = 14
   let circleLayer: CAShapeLayer = CAShapeLayer()
   let overlayView : UIControl = UIControl()
 
-  var items: [OverlayItem] = []
-  var buttonImage = #imageLiteral(resourceName: "camera-white")
+  var items: [FloatingActionItem] = []
+  var buttonImage = UIImage()
   var closed = true
 
   init() {
@@ -29,8 +29,10 @@ class OverlayView: UIView {
   }
 
   func setupTapGestures() {
-    let tapGesture = UITapGestureRecognizer(target: self, action: #selector(tapped))
-    addGestureRecognizer(tapGesture)
+    let floatingActionTapGesture = UITapGestureRecognizer(target: self, action: #selector(tapped))
+    let overlayTapGesture = UITapGestureRecognizer(target: self, action: #selector(tapped))
+    addGestureRecognizer(floatingActionTapGesture)
+    overlayView.addGestureRecognizer(overlayTapGesture)
   }
 
   @objc func tapped() {
@@ -56,14 +58,14 @@ class OverlayView: UIView {
     closed = true
   }
 
-  func addItem(_ title: String, icon: UIImage?, handler: @escaping ((OverlayItem) -> Void)) {
-    let item = OverlayItem()
+  func addItem(_ title: String, icon: UIImage?, handler: @escaping ((FloatingActionItem) -> Void)) {
+    let item = FloatingActionItem()
     item.title = title
     item.icon = icon
     item.handler = handler
     item.frame.origin = CGPoint(x: size / (2 - (item.size / 2)), y: size / (2 - (item.size / 2)))
     item.alpha = 0
-    item.overlayView = self
+    item.floatingActionView = self
     items.append(item)
     addSubview(item)
   }
@@ -83,7 +85,7 @@ class OverlayView: UIView {
     return super.hitTest(point, with: event)
   }
 
-  private func determineTapArea(item : OverlayItem) -> CGRect {
+  private func determineTapArea(item : FloatingActionItem) -> CGRect {
     let tappableMargin : CGFloat = 30.0
     let x = item.titleLabel.frame.origin.x + item.bounds.origin.x
     let y = item.bounds.origin.y

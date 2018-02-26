@@ -20,14 +20,15 @@ class GalleryViewController: UIViewController {
   }
 
   private func setupOverlay() {
-    let overlayView = OverlayView()
-    overlayView.addItem("Upload your own", icon: #imageLiteral(resourceName: "camera-black"), handler: { item in
+    let uploadFloatingAction = FloatingActionView()
+    uploadFloatingAction.buttonImage = #imageLiteral(resourceName: "camera-white")
+    uploadFloatingAction.addItem("Upload your own", icon: #imageLiteral(resourceName: "camera-black"), handler: { item in
       self.performSegue(withIdentifier: "showUpload", sender: nil)
     })
-    overlayView.addItem("Terms and conditions", icon: #imageLiteral(resourceName: "info"), handler: { item in
+    uploadFloatingAction.addItem("Terms and conditions", icon: #imageLiteral(resourceName: "info"), handler: { item in
       self.performSegue(withIdentifier: "showTermsAndConditions", sender: nil)
     })
-    view.addSubview(overlayView)
+    view.addSubview(uploadFloatingAction)
   }
 }
 

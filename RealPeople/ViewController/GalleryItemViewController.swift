@@ -25,15 +25,18 @@ class GalleryItemViewController: UIViewController {
 
 extension GalleryItemViewController: UICollectionViewDelegate, UICollectionViewDataSource {
   func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+    guard let products = galleryItem?.products else {
+      return 0
+    }
     return products.count
   }
 
   func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
     let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ProductCollectionViewCell", for: indexPath) as! ProductCollectionViewCell
     cell.addBorder()
-    cell.imageView.image = products[indexPath.row].image
-    cell.titleLabel.text = products[indexPath.row].title
-    cell.priceLabel.text = products[indexPath.row].price
+    cell.imageView.image = galleryItem?.products[indexPath.row].image
+    cell.titleLabel.text = galleryItem?.products[indexPath.row].title
+    cell.priceLabel.text = galleryItem?.products[indexPath.row].price
     return cell
   }
 }

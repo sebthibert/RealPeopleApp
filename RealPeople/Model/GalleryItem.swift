@@ -6,4 +6,5 @@ struct GalleryItem {
   let description: String
   let submittedBy: String
   let date: String
+  let products: [Product]
 }

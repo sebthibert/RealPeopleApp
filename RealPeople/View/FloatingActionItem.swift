@@ -1,15 +1,15 @@
 import UIKit
 
-class OverlayItem: UIView {
+class FloatingActionItem: UIView {
 
   let size: CGFloat = 42
   let circleLayer: CAShapeLayer = CAShapeLayer()
   let titleLabel = UILabel()
 
-  var handler: ((OverlayItem) -> Void)? = nil
+  var handler: ((FloatingActionItem) -> Void)? = nil
   var title: String? = nil
   var icon: UIImage? = nil
-  var overlayView: OverlayView? = nil
+  var floatingActionView: FloatingActionView? = nil
 
   init() {
     super.init(frame: CGRect(x: 0, y: 0, width: size, height: size))
@@ -38,7 +38,7 @@ class OverlayItem: UIView {
   }
 
   @objc func tapped() {
-    overlayView!.close()
+    floatingActionView!.close()
     handler?(self)
   }
 
