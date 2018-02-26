@@ -26,6 +26,8 @@ class SubmitViewController: UIViewController {
     super.viewDidLoad()
     selectedImageView.image = submissionImage
     setupTapGestures()
+    setupTextFields()
+    validate()
   }
 
   func setupTapGestures() {
@@ -35,21 +37,23 @@ class SubmitViewController: UIViewController {
 
   @objc func toggleCheckbox() {
     checkboxImageView.isHidden = !checkboxImageView.isHidden
+    validate()
+  }
+
+  func setupTextFields() {
+    emailTextField.addTarget(self, action: #selector(textValueChanged), for: .editingChanged)
+    usernameTextField.addTarget(self, action: #selector(textValueChanged), for: .editingChanged)
   }
 
   func validate() {
-    guard (emailTextField.text != nil) else {
-      submitButton.isEnabled = false
-      submitButton.alpha = 0
-      return
-    }
-    guard (usernameTextField.text != nil) else {
-      submitButton.isEnabled = false
-      submitButton.alpha = 0
-      return
-    }
-    submitButton.isEnabled = true
-    submitButton.alpha = 1
+    let expressions = [emailTextField.text != "", usernameTextField.text != "", checkboxImageView.isHidden == false]
+    validate(expressions: expressions, toEnable: submitButton)
+  }
+}
+
+extension SubmitViewController: UITextFieldDelegate {
+  @objc func textValueChanged() {
+    validate()
   }
 }
 

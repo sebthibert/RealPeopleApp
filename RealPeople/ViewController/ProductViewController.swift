@@ -39,14 +39,7 @@ class ProductViewController: UIViewController {
   }
 
   func validate() {
-    guard selectedProductView.selectedItems.count > 0 else {
-      nextButton.isEnabled = false
-      nextButton.alpha = 0
-      return
-    }
-
-    nextButton.isEnabled = true
-    nextButton.alpha = 1
+    validate(expressions: [selectedProductView.selectedItems.count > 0], toEnable: nextButton)
   }
 }
 

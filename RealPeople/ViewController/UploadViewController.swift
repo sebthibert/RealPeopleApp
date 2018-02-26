@@ -101,14 +101,7 @@ class UploadViewController: UIViewController {
   }
 
   func validate() {
-    guard selectedImageView.image != nil else {
-      nextButton.isEnabled = false
-      nextButton.alpha = 0
-      return
-    }
-
-    nextButton.isEnabled = true
-    nextButton.alpha = 1
+    validate(expressions: [selectedImageView.image != nil], toEnable: nextButton)
   }
 }
 
