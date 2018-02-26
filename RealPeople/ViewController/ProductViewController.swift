@@ -10,6 +10,10 @@ class ProductViewController: UIViewController {
   var selectedDepartmentButton: UIButton = UIButton()
   var collectionViewItems: [Product] = []
 
+  var allProductsSelected: Bool {
+    return selectedProductView.selectedItems.count == 6
+  }
+
   @IBAction func nextButtonPressed(_ sender: Any) {
     performSegue(withIdentifier: "showSubmit", sender: nil)
   }
@@ -104,18 +108,21 @@ extension ProductViewController: UICollectionViewDelegate, UICollectionViewDataS
   }
 
   func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-    select(collectionView: collectionView, indexPath: indexPath)
+    let cell = collectionView.cellForItem(at: indexPath) as! ProductCollectionViewCell
+    select(cell, at: indexPath)
   }
 
   func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
-    deselect(collectionView: collectionView, indexPath: indexPath)
+    let cell = collectionView.cellForItem(at: indexPath) as! ProductCollectionViewCell
+    deselect(cell, at: indexPath)
   }
 
-  func select(collectionView: UICollectionView, indexPath: IndexPath) {
-    let cell = collectionView.cellForItem(at: indexPath) as! ProductCollectionViewCell
+  func select(_ cell: ProductCollectionViewCell, at indexPath: IndexPath) {
+    guard !allProductsSelected else {
+      return
+    }
     guard !cell.cellSelected else {
-      deselect(collectionView: collectionView, indexPath: indexPath)
-      cell.cellSelected = false
+      deselect(cell, at: indexPath)
       return
     }
     cell.addBorder(width: 2, color: .black)
@@ -125,11 +132,9 @@ extension ProductViewController: UICollectionViewDelegate, UICollectionViewDataS
     validate()
   }
 
-  func deselect(collectionView: UICollectionView, indexPath: IndexPath) {
-    let cell = collectionView.cellForItem(at: indexPath) as! ProductCollectionViewCell
+  func deselect(_ cell: ProductCollectionViewCell, at indexPath: IndexPath) {
     guard cell.cellSelected else {
-      select(collectionView: collectionView, indexPath: indexPath)
-      cell.cellSelected = true
+      select(cell, at: indexPath)
       return
     }
     cell.addBorder()
