@@ -21,8 +21,6 @@ class OverlayView: UIView {
 
   override func draw(_ rect: CGRect) {
     super.draw(rect)
-    layer.shouldRasterize = true
-    layer.rasterizationScale = UIScreen.main.scale
     setupTapGestures()
     setRightBottomFrame()
     setCircleLayer()

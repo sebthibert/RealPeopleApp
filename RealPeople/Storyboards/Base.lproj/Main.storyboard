@@ -153,7 +153,6 @@
                                 </constraints>
                                 <state key="normal" image="button:Bsp-rd-CDh:image"/>
                                 <connections>
-                                    <action selector="closeButtonPressed:" destination="nep-a0-lrp" eventType="touchUpInside" id="0v1-xK-Zdb"/>
                                     <action selector="closeButtonPressed:" destination="LDD-Pe-XH6" eventType="touchUpInside" id="7Fx-mf-wFp"/>
                                 </connections>
                             </button>
@@ -361,7 +360,9 @@
                     </view>
                     <size key="freeformSize" width="375" height="770"/>
                     <connections>
+                        <outlet property="dateLabel" destination="aeb-s7-nFn" id="FUy-Mu-M0a"/>
                         <outlet property="imageView" destination="WIg-AN-ZvG" id="v3b-Cl-61r"/>
+                        <outlet property="submittedByLabel" destination="SkO-Zh-j1r" id="OHI-GZ-9VT"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wlA-La-ZnM" userLabel="First Responder" sceneMemberID="firstResponder"/>

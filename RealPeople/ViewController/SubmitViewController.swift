@@ -7,6 +7,7 @@ class SubmitViewController: UIViewController {
   @IBOutlet weak var emailTextField: UITextField!
   @IBOutlet weak var usernameTextField: UITextField!
   @IBOutlet weak var submitButton: UIButton!
+  @IBOutlet weak var submitOverlay: UIView!
 
   var submissionImage: UIImage!
   var submissionProducts: [Product]!
@@ -17,8 +18,7 @@ class SubmitViewController: UIViewController {
 
   @IBAction func submitButtonPressed(_ sender: Any) {
     let submission = Submission(image: submissionImage, products: submissionProducts, email: emailTextField.text ?? "", username: usernameTextField.text ?? "")
-    let submitOverlay = SubmitOverlay()
-    view.addSubview(submitOverlay)
+    submitOverlay.isHidden = false
     print(submission)
   }
 

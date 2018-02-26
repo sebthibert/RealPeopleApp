@@ -2,6 +2,8 @@ import UIKit
 
 class GalleryItemViewController: UIViewController {
   @IBOutlet private weak var imageView: UIImageView?
+  @IBOutlet private weak var dateLabel: UILabel?
+  @IBOutlet private weak var submittedByLabel: UILabel?
 
   @IBAction private func closeButtonPressed(_ sender: Any) {
     dismiss(animated: true, completion: nil)
@@ -15,10 +17,9 @@ class GalleryItemViewController: UIViewController {
   }
 
   func setupView() {
-    guard let image = galleryItem?.image else {
-      return
-    }
-    imageView?.image = image
+    imageView?.image = galleryItem?.image
+    dateLabel?.text = galleryItem?.date
+    submittedByLabel?.text = galleryItem?.submittedBy
   }
 }
 
